@@ -1,4 +1,5 @@
 package edu.uqu.cs;
+import java.util.Scanner;
 /*
  * Lab 0 
  * CS 1312
@@ -23,6 +24,32 @@ public class App{
 *        1 Tweetle 3 TweetleBeetle 5 TweetlePoodle 7 TweetleBeetle 9 Tweetle 11
 *        TweetleBeetlePoodle 13 Tweetle 15 TweetleBeetle 17 TweetlePoodle 19 TweetleBeetle 
 */
+public static void TWISTERS () {
+        
+      for ( int i=1; i<=110; i++){
+
+        if (i %2 == 0){
+            System.out.print ("Tweetle");
+        }//end if
+
+        if (i %4 == 0){
+            System.out.print ("Beetle");
+        }//end if
+
+        if (i %6 == 0){
+            System.out.print ("Poodle");
+        }//end if
+
+        else {
+            System.out.print(" " + i);
+        }
+
+        
+      }//end for
+
+    
+
+}
 
 /**
 * Write a method named "phoneKeypad" that takes a string parameter (str)
@@ -42,11 +69,73 @@ public class App{
 * Output: 2255464228626
 *
 */
+public static void phoneKeypad (String str){
+
+    char ch;
+    Scanner scnr = new Scanner(System.in);
+    str = scnr.next();
+    String result ="";
+
+    for (int i=0; i< str.length(); i++){
+
+        switch (str.charAt(i)){
+            case 'A':
+            case 'B':
+            case 'C':
+               result = result +"2";
+               break;
+            case 'D':
+            case 'E':
+            case 'F':
+               result = result + "3";
+               break;
+            case 'G':
+            case 'H':
+            case 'I':
+               result = result +"4";
+               break;
+            case 'J':
+            case 'K':
+            case 'L':
+               result = result +"5";
+               break;
+            case 'M':
+            case 'N':
+            case 'O':
+               result = result + "6";
+               break;
+            case 'P':
+            case 'Q': 
+            case 'R':
+            case 'S':
+               result = result + "7";
+               break;
+            case 'T':
+            case 'U':
+            case 'V':
+               result = result + "8";
+               break;
+            case 'W':
+            case 'X':
+            case 'Y':
+            case 'Z':
+               result = result +"9";
+               break;
+        }
+        System.out.println(result);
+
+    }//end for 
+}
  
     public static void main(String [] args) {
         
 
         /* Write your code here */
+        TWISTERS();
+        System.out.print("Enter a string");
+        
+        Scanner scnr = new Scanner(System.in);
+        phoneKeypad (scnr.nextLine() );
      
        //call method twisters()
        //prompt user to enter a string 
